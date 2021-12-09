@@ -11,7 +11,7 @@ definitions:
           - export PYTHON="/usr/bin/python3.9"
           - ls -l /usr/bin/
           - ls -l /usr/local/lib
-          - find / -name "python3.9"
+          - find /usr -name "python3.9"
           # process
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
