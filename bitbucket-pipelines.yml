@@ -19,8 +19,6 @@ definitions:
           - npm install @mapbox/node-pre-gyp -g
           - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
           - npm ci
-          - cd $BITBUCKET_CLONE_DIR/src/layers/sqlite-layer/nodejs
-          - npm ci
           - cd $BITBUCKET_CLONE_DIR/
           - npm ci
           - npm install -g aws-cdk@^1.134.0
