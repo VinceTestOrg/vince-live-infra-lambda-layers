@@ -7,11 +7,11 @@ definitions:
         script:
           # install python
           - apt-get update && apt-get upgrade --assume-yes
-          - apt install wget build-essential libreadline-gplv2-dev libncursesw5-dev \
+          - apt-get install wget build-essential libreadline-gplv2-dev libncursesw5-dev \
             libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
-          - wget https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tgz
-          - tar xzf Python-3.9.4.tgz
-          - cd Python-3.9.4
+          - wget https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz
+          - tar xzf Python-3.9.9.tgz
+          - cd Python-3.9.9
           - ./configure --enable-optimizations
           - make altinstall
           ###
