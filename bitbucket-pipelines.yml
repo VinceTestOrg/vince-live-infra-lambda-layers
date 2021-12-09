@@ -5,13 +5,21 @@ definitions:
     - step: &deploy
         name: deploy
         script:
+          # install nodejs
+          - curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
           - sudo apt install nodejs
+          # process
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
           - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
           - export AWS_DEFAULT_REGION=$AWS_REGION
           - export STAGE=$BITBUCKET_BRANCH
           - npm -g i npm
+          - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
+          - npm i
+          - cd $BITBUCKET_CLONE_DIR/src/layers/sqlite-layer/nodejs
+          - npm i
+          - cd $BITBUCKET_CLONE_DIR/
           - npm i
           - npm install -g aws-cdk@^1.134.0
           - cdk deploy "*" --require-approval=never
