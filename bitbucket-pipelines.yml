@@ -12,6 +12,7 @@ definitions:
           - export STAGE=$BITBUCKET_BRANCH
           - npm -g i npm
           - cd src/layers/vincelive-internal
+          - echo "generated layers"
           - npm i
           - cd ./
           - npm i
