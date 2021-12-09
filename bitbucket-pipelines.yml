@@ -16,7 +16,6 @@ definitions:
           - export AWS_DEFAULT_REGION=$AWS_REGION
           - export STAGE=$BITBUCKET_BRANCH
           - npm -g i npm
-          - npm install @mapbox/node-pre-gyp -g
           - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
           - npm ci
           - cd $BITBUCKET_CLONE_DIR/
