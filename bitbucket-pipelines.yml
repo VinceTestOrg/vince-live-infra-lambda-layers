@@ -14,7 +14,7 @@ definitions:
           - cd src/layers/vincelive-internal
           - echo "generated layers"
           - npm i
-          - cd ./
+          - cd /
           - npm i
           - npm install -g aws-cdk@^1.134.0
           - cdk deploy "*" --require-approval=never
