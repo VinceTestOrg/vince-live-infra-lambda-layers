@@ -1,15 +1,22 @@
 import * as cdk from '@aws-cdk/core';
+import { LayerConstruct } from './constructs/layerConstruct';
 // import * as sqs from '@aws-cdk/aws-sqs';
 
+interface VinceLiveInfraLambdaLayersStackProps extends cdk.StackProps {
+    branchName: string;
+}
+
 export class VinceLiveInfraLambdaLayersStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+    constructor(scope: cdk.Construct, id: string, props: VinceLiveInfraLambdaLayersStackProps) {
+        super(scope, id, props);
+        const branchName = props.branchName;
 
-    // The code that defines your stack goes here
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'VinceLiveInfraLambdaLayersQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
-  }
+        new LayerConstruct(this, {
+            branchName,
+            name: 'vincelive-internal',
+            description: 'Contains all relevant @vincesoftware/* npm packages'
+        });
+
+    }
 }

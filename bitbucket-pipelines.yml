@@ -1,0 +1,36 @@
+image: node:14
+
+definitions:
+  steps:
+    - step: &deploy
+        name: deploy
+        script:
+          - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+          - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+          - export AWS_DEFAULT_REGION=$AWS_REGION
+          - export STAGE=$BITBUCKET_BRANCH
+          - npm -g i npm
+          - cd src/layers/vincelive-internal
+          - npm i
+          - cd ./
+          - npm i
+          - npm install -g aws-cdk@^1.134.0
+          - cdk deploy "*" --require-approval=never
+pipelines:
+  branches:
+    dev:
+      - step:
+          <<: *deploy
+          name: Deploy to dev
+          deployment: dev
+    staging:
+      - step:
+          <<: *deploy
+          name: Deploy to staging
+          deployment: staging
+    prod:
+      - step:
+          <<: *deploy
+          name: Deploy to prod
+          deployment: prod
