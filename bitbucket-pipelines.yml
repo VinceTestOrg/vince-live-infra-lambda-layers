@@ -4,22 +4,9 @@ definitions:
   steps:
     - step: &deploy
         name: deploy
+        services:
+          - docker
         script:
-          # install python
-          - apt-get update && apt-get upgrade --assume-yes
-          - apt-get install wget make build-essential libssl-dev zlib1g-dev libbz2-dev \
-            libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-            xz-utils tk-dev libffi-dev liblzma-dev
-          - wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
-          - tar xzf Python-3.6.9.tgz
-          - cd Python-3.6.9
-          - ./configure --enable-optimizations
-          - make altinstall
-          ###
-          - export PYTHON="/usr/lib/python3.9"
-          - ls -l /usr/bin/
-          - ls -l /usr/lib
-          - find /usr -name "python3.9"
           # process
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
@@ -28,11 +15,11 @@ definitions:
           - export STAGE=$BITBUCKET_BRANCH
           - npm -g i npm
           - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
-          - npm i
+          - npm ci
           - cd $BITBUCKET_CLONE_DIR/src/layers/sqlite-layer/nodejs
-          - npm i
+          - npm ci
           - cd $BITBUCKET_CLONE_DIR/
-          - npm i
+          - npm ci
           - npm install -g aws-cdk@^1.134.0
           - cdk deploy "*" --require-approval=never
 pipelines:
