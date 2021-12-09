@@ -11,9 +11,9 @@ definitions:
           - export AWS_DEFAULT_REGION=$AWS_REGION
           - export STAGE=$BITBUCKET_BRANCH
           - npm -g i npm
-          - cd src/layers/vincelive-internal
+          - cd src/layers/vincelive-internal/nodejs
           - npm i
-          - cd src/layers/sqlite-layer
+          - cd src/layers/sqlite-layer/nodejs
           - npm i
           - cd ../../../
           - npm i
