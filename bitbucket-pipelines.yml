@@ -11,11 +11,11 @@ definitions:
           - export AWS_DEFAULT_REGION=$AWS_REGION
           - export STAGE=$BITBUCKET_BRANCH
           - npm -g i npm
-          - cd src/layers/vincelive-internal/nodejs
+          - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
           - npm i
-          - cd src/layers/sqlite-layer/nodejs
+          - cd $BITBUCKET_CLONE_DIR/src/layers/sqlite-layer/nodejs
           - npm i
-          - cd ../../../
+          - cd $BITBUCKET_CLONE_DIR/
           - npm i
           - npm install -g aws-cdk@^1.134.0
           - cdk deploy "*" --require-approval=never
