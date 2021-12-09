@@ -1,13 +1,9 @@
 image: node:14
 
 definitions:
-  caches:
-    python3: /usr/bin/python3.9
   steps:
     - step: &deploy
         name: deploy
-        caches:
-          - python3
         script:
           # process
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
