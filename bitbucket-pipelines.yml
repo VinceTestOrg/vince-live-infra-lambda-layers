@@ -7,7 +7,11 @@ definitions:
         script:
           # install python
           - apt-get update
-          - apt-get upgrade --assume-yes python3
+          - apt-get install --assume-yes python3.9
+          - export PYTHON="/usr/bin/python3.9"
+          - ls -l /usr/bin/
+          - ls -l /opt/bin/
+          - find . -name "python3.9"
           # process
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
