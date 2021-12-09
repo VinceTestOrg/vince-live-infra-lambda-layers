@@ -10,6 +10,7 @@ definitions:
           - python3
         script:
           # process
+          - if [ !-x /usr/bin/python3.9]; then echo "it should exist"; ls -l /usr/bin/; fi
           - if [ !-x /usr/bin/python3.9]; then
               apt-get update;
               apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev;
@@ -23,7 +24,7 @@ definitions:
             else
               echo "python 3.9 cache exists";
             fi
-          - export PYTHON="python3.9"
+          - export PYTHON="/usr/bin/python3.9"
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
           - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
