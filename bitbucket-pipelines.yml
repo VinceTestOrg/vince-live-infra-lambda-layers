@@ -4,10 +4,9 @@ definitions:
   steps:
     - step: &deploy
         name: deploy
-        services:
-          - docker
         script:
           # process
+          - cat /etc/os-release
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
           - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
