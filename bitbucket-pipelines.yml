@@ -10,19 +10,19 @@ definitions:
           - python3
         script:
           # process
-          - >- if [-x /usr/bin/python3.9]; then
-                 apt-get update;
-                 apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev;
-                 curl -O https://www.python.org/ftp/python/3.8.2/Python-3.9.9.tar.xz;
-                 tar -xf Python-3.9.9.tar.xz;
-                 cd Python-3.9.9;
-                 ./configure --enable-optimizations;
-                 make -j 4;
-                 make altinstall;
-                 python3.9 --version;
-               else
-                 echo "python 3.9 cache exists";
-               fi
+          - if [-x /usr/bin/python3.9]; then
+              apt-get update;
+              apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev;
+              curl -O https://www.python.org/ftp/python/3.8.2/Python-3.9.9.tar.xz;
+              tar -xf Python-3.9.9.tar.xz;
+              cd Python-3.9.9;
+              ./configure --enable-optimizations;
+              make -j 4;
+              make altinstall;
+              python3.9 --version;
+            else
+              echo "python 3.9 cache exists";
+            fi
           - export PYTHON="python3.9"
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
