@@ -10,28 +10,13 @@ definitions:
           - python3
         script:
           # process
-          - if [ ! -x /usr/bin/python3.9 ]; then echo "it does not exist"; else echo "we have it"; fi;
-          - ls -l /usr/bin
-          - if [ ! -x /usr/bin/python3.9 ]; then
-              apt-get update;
-              apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev;
-              curl -O https://www.python.org/ftp/python/3.8.2/Python-3.9.9.tar.xz;
-              tar -xf Python-3.9.9.tar.xz;
-              cd Python-3.9.9;
-              ./configure --enable-optimizations;
-              make -j 4;
-              make altinstall;
-              python3.9 --version;
-            else
-              echo "python 3.9 cache exists";
-            fi
-          - export PYTHON="/usr/bin/python3.9"
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
           - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
           - export AWS_DEFAULT_REGION=$AWS_REGION
           - export STAGE=$BITBUCKET_BRANCH
           - npm -g i npm
+          - npm install @mapbox/node-pre-gyp -g
           - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
           - npm ci
           - cd $BITBUCKET_CLONE_DIR/src/layers/sqlite-layer/nodejs
