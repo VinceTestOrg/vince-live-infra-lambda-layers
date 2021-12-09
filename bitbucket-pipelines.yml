@@ -7,7 +7,7 @@ definitions:
         script:
           # install python
           - apt-get update
-          - apt-get update --assume-yes python3
+          - apt-get upgrade --assume-yes python3
           # process
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
