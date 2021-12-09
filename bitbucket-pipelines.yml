@@ -10,7 +10,7 @@ definitions:
           - python3
         script:
           # process
-          - if [ ! -x /usr/bin/python3.9 ]; then echo "it should exist"; ls -l /usr/bin; fi
+          - if [ ! -x /usr/bin/python3.9 ]; then; echo "it should exist"; ls -l /usr/bin; fi;
           - if [ ! -x /usr/bin/python3.9 ]; then
               apt-get update;
               apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev;
