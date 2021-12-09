@@ -63,7 +63,7 @@ function getLayerVersion(fullArnWithVersion) {
 
     } while (res?.NextMarker);
 
-    console.log('found', lambdas.length, 'with layers');
+    console.log('found', lambdas.length, 'with layers to update');
 
     // now for each layer, generate a new layer configuration, but ensure to keep the order
 
