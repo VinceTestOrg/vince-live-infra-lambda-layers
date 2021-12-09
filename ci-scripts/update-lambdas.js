@@ -98,7 +98,7 @@ function getLayerVersion(fullArnWithVersion) {
     console.table(debugData);
 
     // update them sequentially to not cause too much trouble with limits
-    for (const lambdaConfig of lambdaConfigurations.filter(t => t.FunctionName === 'janne-debug-layers')) {
+    for (const lambdaConfig of lambdaConfigurations) {
         try {
             await awsLambda.updateFunctionConfiguration(lambdaConfig).promise();
             console.log('UPDATED', lambdaConfig.FunctionName, lambdaConfig.Layers);

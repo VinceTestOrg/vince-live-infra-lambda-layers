@@ -1,7 +1,7 @@
 {
     "name": "vincelive-internal",
     "version": "1.0.0",
-    "description": "Contains all internal vince live npm packages",
+    "description": "Contains all internal Vince Live npm packages prefixed with @vincesoftware",
     "dependencies": {
         "@vincesoftware/module-lambda-middleware": "^1.5.19",
         "@vincesoftware/module-m3api-rest": "^3.0.8",
