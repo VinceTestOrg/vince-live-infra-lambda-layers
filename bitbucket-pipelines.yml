@@ -1,10 +1,11 @@
-image: node:14
+image: python:slim
 
 definitions:
   steps:
     - step: &deploy
         name: deploy
         script:
+          - sudo apt install nodejs
           - echo -e "registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
           - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
