@@ -11,6 +11,6 @@
         "@vincesoftware/vincelive-aws-scoped-client": "^1.0.19",
         "@vincesoftware/vincelive-customtable-client": "^2.0.61",
         "@vincesoftware/vincelive-entity-client": "^1.4.61",
-        "@vincesoftware/vincelive-utils": "^1.1.49"
+        "@vincesoftware/vincelive-utils": "^1.1.50"
     }
 }
