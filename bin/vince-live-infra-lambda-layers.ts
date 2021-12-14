@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
 import { VinceLiveInfraLambdaLayersStack } from '../lib/vince-live-infra-lambda-layers-stack';
+import { App } from 'aws-cdk-lib';
 
-const app = new cdk.App();
+const app = new App();
 
 const branchName = process.env.STAGE || process.env.SELECTED_BRANCH;
 

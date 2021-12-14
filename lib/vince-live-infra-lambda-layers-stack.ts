@@ -1,13 +1,14 @@
-import * as cdk from '@aws-cdk/core';
 import { LayerConstruct } from './constructs/layerConstruct';
+import { Stack, StackProps } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 // import * as sqs from '@aws-cdk/aws-sqs';
 
-interface VinceLiveInfraLambdaLayersStackProps extends cdk.StackProps {
+interface VinceLiveInfraLambdaLayersStackProps extends StackProps {
     branchName: string;
 }
 
-export class VinceLiveInfraLambdaLayersStack extends cdk.Stack {
-    constructor(scope: cdk.Construct, id: string, props: VinceLiveInfraLambdaLayersStackProps) {
+export class VinceLiveInfraLambdaLayersStack extends Stack {
+    constructor(scope: Construct, id: string, props: VinceLiveInfraLambdaLayersStackProps) {
         super(scope, id, props);
         const branchName = props.branchName;
 
