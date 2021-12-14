@@ -19,7 +19,7 @@ definitions:
           # install root
           - cd $BITBUCKET_CLONE_DIR/
           - npm ci
-          - npm install -g aws-cdk@^1.134.0
+          - npm install -g aws-cdk
           - cdk deploy "*" --require-approval=never
           # update lambdas
           - node ci-scripts/update-lambdas.js
