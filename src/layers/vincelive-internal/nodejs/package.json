@@ -7,7 +7,7 @@
         "@vincesoftware/module-m3api-rest": "^3.0.8",
         "@vincesoftware/module-workflow-excel": "^1.0.36",
         "@vincesoftware/module-workflow-helper": "^1.2.24",
-        "@vincesoftware/vincelive-authorizer": "^1.0.6",
+        "@vincesoftware/vincelive-authorizer": "^1.0.8",
         "@vincesoftware/vincelive-aws-scoped-client": "^1.0.20",
         "@vincesoftware/vincelive-customtable-client": "^2.0.61",
         "@vincesoftware/vincelive-entity-client": "^1.4.61",
