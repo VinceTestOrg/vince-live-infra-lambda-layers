@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "description": "Contains all internal Vince Live npm packages prefixed with @vincesoftware",
     "dependencies": {
-        "@vincesoftware/module-lambda-middleware": "^1.5.19",
+        "@vincesoftware/module-lambda-middleware": "^1.5.23",
         "@vincesoftware/module-m3api-rest": "^3.0.8",
         "@vincesoftware/module-workflow-excel": "^1.0.36",
         "@vincesoftware/module-workflow-helper": "^1.2.24",
         "@vincesoftware/vincelive-authorizer": "^1.0.8",
-        "@vincesoftware/vincelive-aws-scoped-client": "^1.0.21",
+        "@vincesoftware/vincelive-aws-scoped-client": "^1.0.25",
         "@vincesoftware/vincelive-customtable-client": "^2.0.61",
         "@vincesoftware/vincelive-entity-client": "^1.4.61",
         "@vincesoftware/vincelive-utils": "^1.1.50"
