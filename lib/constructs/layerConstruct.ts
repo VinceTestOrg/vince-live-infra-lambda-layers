@@ -1,6 +1,7 @@
-import { Construct } from '@aws-cdk/core';
-import { Architecture, Code, LayerVersion, Runtime } from '@aws-cdk/aws-lambda';
-import { StringParameter } from '@aws-cdk/aws-ssm';
+import { Architecture, Code, LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { Construct } from 'constructs';
+import { StringParameter } from 'aws-cdk-lib/aws-ssm';
+
 
 interface LayerConstructProps {
     branchName: string;
