@@ -6,7 +6,7 @@
         "@vincesoftware/module-lambda-middleware": "^1.5.23",
         "@vincesoftware/module-m3api-rest": "^3.0.8",
         "@vincesoftware/module-workflow-excel": "^1.0.36",
-        "@vincesoftware/module-workflow-helper": "^1.2.28",
+        "@vincesoftware/module-workflow-helper": "^1.2.32",
         "@vincesoftware/vincelive-authorizer": "^1.0.8",
         "@vincesoftware/vincelive-aws-scoped-client": "^1.0.26",
         "@vincesoftware/vincelive-customtable-client": "^2.0.61",
