@@ -17,6 +17,7 @@ definitions:
           - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
           # use latest versions instead of version in package-lock.json
           - npm i
+          - npm list
           # install root
           - cd $BITBUCKET_CLONE_DIR/
           - npm ci
