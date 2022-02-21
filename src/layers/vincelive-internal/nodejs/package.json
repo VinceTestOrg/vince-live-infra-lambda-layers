@@ -5,12 +5,12 @@
     "dependencies": {
         "@vincesoftware/module-lambda-middleware": "^1.5.23",
         "@vincesoftware/module-m3api-rest": "^3.0.9",
-        "@vincesoftware/module-workflow-excel": "^1.0.36",
-        "@vincesoftware/module-workflow-helper": "^1.2.39",
+        "@vincesoftware/module-workflow-excel": "^1.0.39",
+        "@vincesoftware/module-workflow-helper": "^1.2.42",
         "@vincesoftware/vincelive-authorizer": "^1.0.9",
         "@vincesoftware/vincelive-aws-scoped-client": "^1.0.26",
         "@vincesoftware/vincelive-customtable-client": "^2.0.63",
         "@vincesoftware/vincelive-entity-client": "^1.4.67",
-        "@vincesoftware/vincelive-utils": "^1.1.52"
+        "@vincesoftware/vincelive-utils": "^1.1.54"
     }
 }
