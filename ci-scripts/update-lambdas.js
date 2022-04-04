@@ -43,11 +43,14 @@ function getLayerVersion(fullArnWithVersion) {
 
     let lambdas = [];
     let res;
+    let numLambdasTotal = 0;
     do {
         res = await awsLambda.listFunctions({
             MaxItems: 50,
             Marker: res?.NextMarker
         }).promise();
+
+        numLambdasTotal += res.Functions.length;
 
         lambdas = [
             ...lambdas,
@@ -63,6 +66,7 @@ function getLayerVersion(fullArnWithVersion) {
 
     } while (res?.NextMarker);
 
+    console.log('scanned', numLambdasTotal, 'lambdas');
     console.log('found', lambdas.length, 'with layers to update');
 
     // now for each layer, generate a new layer configuration, but ensure to keep the order
