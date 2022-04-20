@@ -109,6 +109,7 @@ function getLayerVersion(fullArnWithVersion) {
         console.time('lambda ' + lambdaConfig.FunctionName);
         try {
             await awsLambda.updateFunctionConfiguration(lambdaConfig).promise();
+            numUpdated++;
             console.log('UPDATED', numUpdated, '/', lambdas.length, ':::', lambdaConfig.FunctionName, lambdaConfig.Layers);
 
         } catch (e) {

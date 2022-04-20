@@ -13,11 +13,11 @@
         "@vincesoftware/vincelive-crypto-client": "^1.0.10",
         "@vincesoftware/vincelive-customtable-client": "^2.0.67",
         "@vincesoftware/vincelive-entity-client": "^1.5.3",
-        "@vincesoftware/vincelive-mw-content-type": "^0.1.5",
-        "@vincesoftware/vincelive-mw-core": "^0.1.5",
-        "@vincesoftware/vincelive-mw-correlation-ids": "^0.1.5",
-        "@vincesoftware/vincelive-mw-identity": "^0.1.5",
-        "@vincesoftware/vincelive-mw-usage": "^0.1.5",
+        "@vincesoftware/vincelive-mw-content-type": "^0.1.6",
+        "@vincesoftware/vincelive-mw-core": "^0.1.6",
+        "@vincesoftware/vincelive-mw-correlation-ids": "^0.1.6",
+        "@vincesoftware/vincelive-mw-identity": "^0.1.6",
+        "@vincesoftware/vincelive-mw-usage": "^0.1.6",
         "@vincesoftware/vincelive-utils": "^1.1.56"
     }
 }
