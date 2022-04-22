@@ -103,12 +103,14 @@ function getLayerVersion(fullArnWithVersion) {
 
     console.log('======================== STARTING LAMBDA CONFIGURATION UPDATES ==========================');
     console.time('lambdaUpdates');
+    let numUpdated = 0;
     // update them sequentially to not cause too much trouble with limits
     for (const lambdaConfig of lambdaConfigurations) {
         console.time('lambda ' + lambdaConfig.FunctionName);
         try {
             await awsLambda.updateFunctionConfiguration(lambdaConfig).promise();
-            console.log('UPDATED', lambdaConfig.FunctionName, lambdaConfig.Layers);
+            numUpdated++;
+            console.log('UPDATED', numUpdated, '/', lambdas.length, ':::', lambdaConfig.FunctionName, lambdaConfig.Layers);
 
         } catch (e) {
             console.error('I FUCKED UP! name:', lambdaConfig.FunctionName, lambdaConfig.Layers);
