@@ -19,6 +19,6 @@
         "@vincesoftware/vincelive-mw-identity": "^0.1.16",
         "@vincesoftware/vincelive-mw-unauthenticated-lookup": "^0.1.16",
         "@vincesoftware/vincelive-mw-usage": "^0.1.15",
-        "@vincesoftware/vincelive-utils": "^2.0.7"
+        "@vincesoftware/vincelive-utils": "^2.0.8"
     }
 }
