@@ -4,9 +4,9 @@
     "description": "Contains all internal Vince Live npm packages prefixed with @vincesoftware",
     "dependencies": {
         "@vincesoftware/module-lambda-middleware": "^1.5.29",
-        "@vincesoftware/module-m3api-rest": "^5.0.3",
+        "@vincesoftware/module-m3api-rest": "^5.0.5",
         "@vincesoftware/module-workflow-excel": "^1.0.48",
-        "@vincesoftware/module-workflow-helper": "^1.4.13",
+        "@vincesoftware/module-workflow-helper": "^1.4.15",
         "@vincesoftware/vincelive-authorizer": "^1.0.14",
         "@vincesoftware/vincelive-aws-scoped-client": "^1.0.28",
         "@vincesoftware/vincelive-axios-client": "^1.3.7",
@@ -19,6 +19,6 @@
         "@vincesoftware/vincelive-mw-identity": "^0.1.16",
         "@vincesoftware/vincelive-mw-unauthenticated-lookup": "^0.1.16",
         "@vincesoftware/vincelive-mw-usage": "^0.1.15",
-        "@vincesoftware/vincelive-utils": "^2.0.7"
+        "@vincesoftware/vincelive-utils": "^2.0.11"
     }
 }
