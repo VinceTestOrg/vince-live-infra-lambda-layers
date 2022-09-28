@@ -13,12 +13,14 @@
         "@vincesoftware/vincelive-crypto-client": "^1.0.11",
         "@vincesoftware/vincelive-customtable-client": "^2.0.73",
         "@vincesoftware/vincelive-entity-client": "^1.5.12",
-        "@vincesoftware/vincelive-mw-content-type": "^0.1.15",
-        "@vincesoftware/vincelive-mw-core": "^0.1.14",
-        "@vincesoftware/vincelive-mw-correlation-ids": "^0.1.15",
-        "@vincesoftware/vincelive-mw-identity": "^0.1.16",
-        "@vincesoftware/vincelive-mw-unauthenticated-lookup": "^0.1.16",
-        "@vincesoftware/vincelive-mw-usage": "^0.1.15",
-        "@vincesoftware/vincelive-utils": "^2.0.11"
+        "@vincesoftware/vincelive-mw-check-access": "^0.1.18",
+        "@vincesoftware/vincelive-mw-content-type": "^0.1.18",
+        "@vincesoftware/vincelive-mw-core": "^0.1.18",
+        "@vincesoftware/vincelive-mw-correlation-ids": "^0.1.18",
+        "@vincesoftware/vincelive-mw-identity": "^0.1.18",
+        "@vincesoftware/vincelive-mw-unauthenticated-lookup": "^0.1.18",
+        "@vincesoftware/vincelive-mw-usage": "^0.1.18",
+        "@vincesoftware/vincelive-utils": "^2.0.11",
+        "@vincesoftware/vincelive-utils-brackets": "^1.0.6"
     }
 }
