@@ -1,4 +1,6 @@
 const {Lambda, SSM} = require('aws-sdk');
+const pLimit = require('p-limit');
+const limiter = pLimit(5);
 
 const awsLambda = new Lambda({
     region: process.env.AWS_REGION
@@ -17,6 +19,7 @@ function getLayerArn(fullArnWithVersion) {
 function getLayerVersion(fullArnWithVersion) {
     return parseInt(fullArnWithVersion.split(':')[7]);
 }
+
 (async () => {
     console.time('all');
 
@@ -40,6 +43,8 @@ function getLayerVersion(fullArnWithVersion) {
     console.log(layers);
 
     console.timeEnd('layers');
+
+    console.time('lambda scan time');
 
     let lambdas = [];
     let res;
@@ -67,7 +72,9 @@ function getLayerVersion(fullArnWithVersion) {
     } while (res?.NextMarker);
 
     console.log('scanned', numLambdasTotal, 'lambdas');
+    console.timeEnd('lambda scan time');
     console.log('found', lambdas.length, 'with layers to update');
+
 
     // now for each layer, generate a new layer configuration, but ensure to keep the order
 
@@ -103,22 +110,23 @@ function getLayerVersion(fullArnWithVersion) {
 
     console.log('======================== STARTING LAMBDA CONFIGURATION UPDATES ==========================');
     console.time('lambdaUpdates');
-    let numUpdated = 0;
-    // update them sequentially to not cause too much trouble with limits
-    for (const lambdaConfig of lambdaConfigurations) {
-        console.time('lambda ' + lambdaConfig.FunctionName);
-        try {
-            await awsLambda.updateFunctionConfiguration(lambdaConfig).promise();
-            numUpdated++;
-            console.log('UPDATED', numUpdated, '/', lambdas.length, ':::', lambdaConfig.FunctionName, lambdaConfig.Layers);
 
-        } catch (e) {
-            console.error('I FUCKED UP! name:', lambdaConfig.FunctionName, lambdaConfig.Layers);
-            console.error(e);
-        }
+    const promises = [];
+    lambdaConfigurations.forEach(lambdaConfig => {
+        promises.push(limiter(() => awsLambda.updateFunctionConfiguration(lambdaConfig).promise()));
+    });
+    const results = await Promise.allSettled(promises);
+    console.log(await Promise.allSettled(promises));
+    const succeeded = results.map(res => res.status === 'fulfilled');
+    const rejected = results.map(res => res.status === 'rejected');
+    console.log('====== DONE UPDATING ==== ');
+    console.log('Failures (', rejected?.length, '): ');
+    console.log(rejected);
+    console.log({
+        numSucceeded: succeeded?.length,
+        numRejected: rejected?.length
+    });
 
-        console.timeEnd('lambda ' + lambdaConfig.FunctionName);
-    }
     console.timeEnd('lambdaUpdates');
     console.timeEnd('all');
 })();
