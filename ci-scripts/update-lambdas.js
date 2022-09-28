@@ -116,7 +116,6 @@ function getLayerVersion(fullArnWithVersion) {
         promises.push(limiter(() => awsLambda.updateFunctionConfiguration(lambdaConfig).promise()));
     });
     const results = await Promise.allSettled(promises);
-    console.log(await Promise.allSettled(promises));
     const succeeded = results.filter(res => res.status === 'fulfilled');
     const rejected = results.filter(res => res.status === 'rejected');
     console.log('====== DONE UPDATING ==== ');
