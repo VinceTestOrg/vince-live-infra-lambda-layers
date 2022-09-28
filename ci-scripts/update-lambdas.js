@@ -117,9 +117,10 @@ function getLayerVersion(fullArnWithVersion) {
     });
     const results = await Promise.allSettled(promises);
     console.log(await Promise.allSettled(promises));
-    const succeeded = results.map(res => res.status === 'fulfilled');
-    const rejected = results.map(res => res.status === 'rejected');
+    const succeeded = results.filter(res => res.status === 'fulfilled');
+    const rejected = results.filter(res => res.status === 'rejected');
     console.log('====== DONE UPDATING ==== ');
+    console.log('Succeeded: (', succeeded?.length, '): ');
     console.log('Failures (', rejected?.length, '): ');
     console.log(rejected);
     console.log({
@@ -129,4 +130,7 @@ function getLayerVersion(fullArnWithVersion) {
 
     console.timeEnd('lambdaUpdates');
     console.timeEnd('all');
+    if (rejected.length > 0) {
+        process.exit(1); // fail with error
+    }
 })();
