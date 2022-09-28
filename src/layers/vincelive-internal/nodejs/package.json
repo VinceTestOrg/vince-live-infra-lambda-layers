@@ -21,7 +21,6 @@
         "@vincesoftware/vincelive-mw-unauthenticated-lookup": "^0.1.18",
         "@vincesoftware/vincelive-mw-usage": "^0.1.18",
         "@vincesoftware/vincelive-utils": "^2.0.14",
-        "@vincesoftware/vincelive-utils-brackets": "^1.0.6",
-        "p-limit": "^3.1.0"
+        "@vincesoftware/vincelive-utils-brackets": "^1.0.6"
     }
 }
