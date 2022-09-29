@@ -25,7 +25,7 @@ export class LayerConstruct extends Construct {
             layerVersionName: props.name,
             code: Code.fromAsset(`./src/layers/${folderName}`),
             compatibleArchitectures: props.compatibleArchitectures ?? [ Architecture.ARM_64, Architecture.X86_64 ],
-            compatibleRuntimes: props.compatibleRuntimes ?? [ Runtime.NODEJS_12_X, Runtime.NODEJS_14_X ],
+            compatibleRuntimes: props.compatibleRuntimes ?? [ Runtime.NODEJS_12_X, Runtime.NODEJS_14_X, Runtime.NODEJS_16_X ],
             description: props.description
         });
 
