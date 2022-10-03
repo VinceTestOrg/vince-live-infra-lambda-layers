@@ -21,7 +21,8 @@
         "@vincesoftware/vincelive-mw-ping": "^0.1.21",
         "@vincesoftware/vincelive-mw-unauthenticated-lookup": "^0.1.18",
         "@vincesoftware/vincelive-mw-usage": "^0.1.18",
-        "@vincesoftware/vincelive-utils": "^2.0.14",
-        "@vincesoftware/vincelive-utils-brackets": "^1.0.6"
+        "@vincesoftware/vincelive-utils": "^2.0.15",
+        "@vincesoftware/vincelive-utils-brackets": "^1.0.6",
+        "@vincesoftware/vincelive-utils-morph": "^1.0.1"
     }
 }
