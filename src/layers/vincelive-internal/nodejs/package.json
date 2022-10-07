@@ -23,6 +23,6 @@
         "@vincesoftware/vincelive-mw-usage": "^0.1.18",
         "@vincesoftware/vincelive-utils": "^2.0.15",
         "@vincesoftware/vincelive-utils-brackets": "^1.0.6",
-        "@vincesoftware/vincelive-utils-morph": "^1.0.1"
+        "@vincesoftware/vincelive-utils-morph": "^1.0.2"
     }
 }
