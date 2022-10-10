@@ -18,6 +18,7 @@
         "@vincesoftware/vincelive-mw-core": "^0.1.18",
         "@vincesoftware/vincelive-mw-correlation-ids": "^0.1.19",
         "@vincesoftware/vincelive-mw-identity": "^0.1.19",
+        "@vincesoftware/vincelive-mw-json-body-parser": "^0.1.22",
         "@vincesoftware/vincelive-mw-ping": "^0.1.21",
         "@vincesoftware/vincelive-mw-unauthenticated-lookup": "^0.1.18",
         "@vincesoftware/vincelive-mw-usage": "^0.1.18",
