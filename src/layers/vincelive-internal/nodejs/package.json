@@ -24,6 +24,6 @@
         "@vincesoftware/vincelive-mw-usage": "^0.1.18",
         "@vincesoftware/vincelive-utils": "^2.0.17",
         "@vincesoftware/vincelive-utils-brackets": "^1.0.8",
-        "@vincesoftware/vincelive-utils-morph": "^1.0.3"
+        "@vincesoftware/vincelive-utils-morph": "^1.0.4"
     }
 }
