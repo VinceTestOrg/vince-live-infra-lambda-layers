@@ -11,7 +11,7 @@
         "@vincesoftware/vincelive-aws-scoped-client": "^1.0.28",
         "@vincesoftware/vincelive-axios-client": "^1.3.7",
         "@vincesoftware/vincelive-crypto-client": "^1.0.11",
-        "@vincesoftware/vincelive-customtable-client": "^2.0.74",
+        "@vincesoftware/vincelive-customtable-client": "^2.0.76",
         "@vincesoftware/vincelive-entity-client": "^1.5.40",
         "@vincesoftware/vincelive-mw-check-access": "^0.1.19",
         "@vincesoftware/vincelive-mw-content-type": "^0.1.19",
