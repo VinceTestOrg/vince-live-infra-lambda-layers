@@ -5,7 +5,7 @@
     "dependencies": {
         "@vincesoftware/module-lambda-middleware": "^1.5.30",
         "@vincesoftware/module-m3api-rest": "^5.0.5",
-        "@vincesoftware/module-workflow-excel": "^1.0.56",
+        "@vincesoftware/module-workflow-excel": "^1.0.57",
         "@vincesoftware/module-workflow-helper": "^1.4.17",
         "@vincesoftware/vincelive-authorizer": "^1.0.20",
         "@vincesoftware/vincelive-aws-scoped-client": "^1.0.28",
