@@ -8,7 +8,7 @@
         "@vincesoftware/module-workflow-excel": "^1.0.65",
         "@vincesoftware/module-workflow-helper": "^1.4.19",
         "@vincesoftware/vincelive-authorizer": "^1.0.20",
-        "@vincesoftware/vincelive-aws-scoped-client": "^1.0.31",
+        "@vincesoftware/vincelive-aws-scoped-client": "^1.0.32",
         "@vincesoftware/vincelive-axios-client": "^1.3.7",
         "@vincesoftware/vincelive-crypto-client": "^1.0.11",
         "@vincesoftware/vincelive-customtable-client": "^2.0.77",
