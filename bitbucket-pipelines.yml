@@ -12,7 +12,7 @@ definitions:
           - export AWS_DEFAULT_REGION=$AWS_REGION
           - export AWS_REGION=$AWS_REGION
           - export STAGE=$BITBUCKET_BRANCH
-          - npm -g i npm
+          - npm -g i npm@8
           # install layer dependencies
           - cd $BITBUCKET_CLONE_DIR/src/layers/vincelive-internal/nodejs
           # use latest versions instead of version in package-lock.json
