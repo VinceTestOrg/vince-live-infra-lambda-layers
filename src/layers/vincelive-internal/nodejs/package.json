@@ -4,7 +4,7 @@
     "description": "Contains all internal Vince Live npm packages prefixed with @vincesoftware",
     "dependencies": {
         "@vincesoftware/module-lambda-middleware": "^1.5.30",
-        "@vincesoftware/module-m3api-rest": "^5.0.6",
+        "@vincesoftware/module-m3api-rest": "^5.0.7",
         "@vincesoftware/module-workflow-excel": "^1.0.67",
         "@vincesoftware/module-workflow-helper": "^1.4.37",
         "@vincesoftware/vincelive-authorizer": "^1.0.20",
