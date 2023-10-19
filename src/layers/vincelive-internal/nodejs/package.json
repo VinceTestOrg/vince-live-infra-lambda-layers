@@ -12,7 +12,7 @@
         "@vincesoftware/vincelive-axios-client": "^1.4.1",
         "@vincesoftware/vincelive-crypto-client": "^1.0.11",
         "@vincesoftware/vincelive-customtable-client": "^2.0.77",
-        "@vincesoftware/vincelive-entity-client": "^1.7.1",
+        "@vincesoftware/vincelive-entity-client": "^1.7.2",
         "@vincesoftware/vincelive-mw-check-access": "^0.1.19",
         "@vincesoftware/vincelive-mw-content-type": "^0.1.19",
         "@vincesoftware/vincelive-mw-core": "^0.1.18",
