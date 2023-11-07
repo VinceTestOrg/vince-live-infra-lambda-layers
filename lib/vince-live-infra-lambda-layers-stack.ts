@@ -15,7 +15,7 @@ export class VinceLiveInfraLambdaLayersStack extends Stack {
 
         new LayerConstruct(this, {
             branchName,
-            name: 'vincelive-internal',
+            name: 'vincelive-internal-test',
             description: 'Contains all relevant @vincesoftware/* npm packages'
         });
 

@@ -1,0 +1,47 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - dev
+      - staging
+      - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: node:16
+    
+    env:
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      STAGE: ${{ github.ref_name }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+      
+      - name: Install global NPM packages
+        run: npm install -g npm aws-cdk
+      
+      - name: Install layer dependencies
+        run: |
+          cd src/layers/vincelive-internal/nodejs
+          npm install
+          npm list
+      
+      - name: Install root dependencies
+        run: npm ci
+      
+      - name: Deploy CDK stack
+        run: cdk deploy "*" --require-approval=never
+      
+      - name: Update lambdas
+        run: node ci-scripts/update-lambdas.js
